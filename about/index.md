@@ -1,32 +1,51 @@
 ---
 layout: page
-title: About the Jekyll Theme
+title: 关于我们
 image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  feature: hero-banner.jpg
 comments: false
-modified: 2016-02-01
 ---
 
-They say three times the charm, so here is another free responsive Jekyll blog theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. 
+# 众心精工装修公司
 
-If you've used any of [my other themes](http://mademistakes.com/work/jekyll-themes/) most of this should be familiar territory...
+## 公司简介
 
-## HPSTR Features:
+众心精工是一家专注于家庭装修、别墅整装、旧房改造的专业装修公司，提供全案设计+施工一体化服务。我们拥有10余年行业经验，始终坚持"匠心筑家 品质随行 不忘初心 方得始终"的服务理念，为客户打造高品质的居住空间。
 
-* Compatible with Jekyll 3 and GitHub Pages.
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Sweet animated menu.
-* Background image support.
-* Support for large images to call out your favorite posts.
-* Optional [Disqus](http://disqus.com) comments.
-* Simple and clear permalink structure[^1].
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* [Custom 404 page]({{ site.url }}/404.html) to get you started.
-* [Syntax highlighting]({{ site.url }}/code-highlighting-post/) stylesheets to make your code examples look snazzy.
+## 服务理念
 
-<div markdown="0"><a href="{{ site.url }}/theme-setup/" class="btn btn-info">Theme Setup</a> <a href="https://github.com/mmistakes/jekyll-theme-hpstr" class="btn btn-success">Download HPSTR</a></div>
+- **匠心筑家**：以工匠精神对待每一个细节，追求卓越品质
+- **品质随行**：从设计到施工，全程把控品质，确保客户满意
+- **不忘初心**：始终牢记为客户创造美好居住环境的初心
+- **方得始终**：坚持诚信经营，赢得客户的长期信任
 
-[^1]: Example: *domain.com/category-name/post-title*
+## 核心优势
+
+### 专业团队
+我们拥有一支经验丰富、技术精湛的专业团队，包括资深设计师、项目经理和施工工匠，确保每一个项目都能高质量完成。
+
+### 全案设计
+提供从空间规划、风格设计、材料选择到软装配饰的全案设计服务，为客户打造个性化的居住空间。
+
+### 严格施工管理
+采用标准化施工流程和严格的质量控制体系，确保施工进度和质量，零增项承诺让客户放心。
+
+### 优质材料
+与知名材料供应商合作，使用环保、优质的装修材料，为客户的健康保驾护航。
+
+## 服务范围
+
+- **家庭装修**：新房装修、老房翻新、局部改造
+- **别墅整装**：别墅设计、施工、软装搭配
+- **商业空间**：办公室、店铺、餐饮空间装修
+- **工程装修**：酒店、写字楼、公寓装修
+
+## 联系方式
+
+- **地址**：深圳市宝安区西乡街道南昌社区富士君荟苑1栋1-218
+- **电话**：18672542107
+- **微信**：zhongxinjinggong
+
+## 公司愿景
+
+成为深圳地区最受客户信赖的装修服务提供商，为更多家庭创造美好居住环境。
