@@ -2,7 +2,7 @@
 title: 众心精工 - 一站式家装设计与施工服务
 tagline: 匠心筑家 品质随行 不忘初心 方得始终
 description: 众心精工装修公司专注家庭装修、别墅整装、旧房改造，提供全案设计+施工一体化服务，10年行业经验，零增项承诺！
-url: "https://kekele.github.io" # 替换为你的域名
+url: "https://zxjg.dpdns.org" # 替换为你的域名
 baseurl: ""
 permalink: /:title/
 
@@ -33,6 +33,4 @@ contact:
 
 # 插件（需确保已安装）
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-feed
