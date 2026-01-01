@@ -40,17 +40,26 @@
   <div style="max-width: 1200px; margin: 0 auto;">
     <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">精选装修案例</h2>
     <div class="case-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-      {% for case in site.data.cases limit:6 %}
+      立于深圳福田中心，以高级、现代、极简为设计内核，重塑出契合塔尖人群的理想栖居地。
+设计师以克制的手笔规划布局，消弭空间边界的同时，让每一寸区域都承载起生活与美学的双重诉求。
+黑白灰的经典主调，铺陈出沉稳内敛的基底，恰如深圳这座城市的理性与从容；
+跳跃的亮色软装作为点睛之笔，瞬间激活空间的灵动气息，打破极简风格的清冷感。
+线条利落的现代家具，甄选上乘质感的材质打造，与空间的简约调性浑然相融。
+没有多余的装饰堆砌，却于细节处尽显奢雅 
+从地面石材的细腻肌理，到墙面线条的利落勾勒，再到光影的层次营造，
+每一处设计都暗藏巧思，让居者在繁华都市的静谧一隅，尽享舒适与格调兼具的高阶生活。
       <a href="{{ case.url }}" style="text-decoration: none; color: #333;">
         <div class="case-card" style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <img src="{{ case.image }}" alt="{{ case.title }}" style="width: 100%; height: 200px; object-fit: cover;">
+          <img src="/images/keting.jpg" alt="滨河时代260㎡大平层" style="width: 100%; height: 200px; object-fit: cover;">
           <div style="padding: 1rem;">
-            <h3 style="margin-bottom: 0.5rem;">{{ case.title }}</h3>
-            <p style="color: #666;">{{ case.style }} | {{ case.area }}</p>
+            <h3 style="margin-bottom: 0.5rem;">滨河时代260㎡大平层</h3>
+            <p style="color: #666;">中式客厅效果预览</p>
           </div>
         </div>
       </a>
-      {% endfor %}
+      线条利落的定制家具，甄选全球奢品材质打造，每一处细节都暗藏匠心 —— 嵌入式智能收纳系统，藏起生活琐碎；
+      无主灯设计搭配磁吸轨道灯，让光影层次随心意变换；餐厨一体化的开放式布局，兼容社交宴饮与日常烟火。
+在深圳这座步履不停的先锋之城，于此揽一城繁华，享一室静谧，重新定义高端人居的奢雅内涵。
     </div>
     <div style="text-align: center; margin-top: 2rem;">
       <a href="/cases/" class="more-btn" style="color: #d97706; text-decoration: none;">查看更多案例 →</a>
