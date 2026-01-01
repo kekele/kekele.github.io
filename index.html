@@ -1,4 +1,6 @@
-title: Latest Posts
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <!-- Hero 头部大图区域 -->
 <div class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-banner.jpg') center/cover no-repeat; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;">
   <div class="hero-content">
@@ -89,3 +91,299 @@ title: Latest Posts
     </div>
   </div>
 </section>
+<!-- 3. 视频展示模块 -->
+    <section class="section videos-section">
+        <div class="container text-center">
+            <h2 class="mb-5"><i class="fa-solid fa-video"></i> 施工&效果视频</h2>
+            <div class="ratio ratio-16x9 mx-auto" style="max-width: 800px;"> <!-- 限制视频最大宽度，更美观 -->
+                <video controls poster="/assets/img/video-cover.jpg" class="rounded shadow"> <!-- 补充圆角和阴影 -->
+                    <source src="/assets/video/construction.mp4" type="video/mp4">
+                    你的浏览器不支持视频播放
+                </video>
+            </div>
+            <p class="mt-3">点击播放：众心精工施工工艺全流程</p>
+            <a href="/videos/" class="btn mt-2">查看更多视频</a>
+        </div>
+    </section>
+
+    <!-- 4. 新闻动态模块 -->
+    <section class="section news-section">
+        <div class="container">
+            <h2 class="text-center mb-5"><i class="fa-solid fa-newspaper"></i> 装修新闻&行业动态</h2>
+            <div class="row g-4"> <!-- 替换mb-3为g-4，间距更均匀 -->
+                <div class="col-md-6">
+                    <h4><i class="fa-solid fa-calendar-day"></i> 2024装修流行趋势</h4>
+                    <p>极简风+原木风仍是主流，环保材料成首选...</p>
+                </div>
+                <div class="col-md-6">
+                    <h4><i class="fa-solid fa-shield-halved"></i> 众心精工质保升级</h4>
+                    <p>所有工程经过层层把关，隐蔽工程配有全景影像记录，让您无后顾之忧...</p>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="/news/" class="btn">更多新闻</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 预约咨询模块（右侧添加客服图片，新增表单提交提示） -->
+    <style>
+        /* 预约咨询模块 - 渐变背景+右侧客服图片 */
+        .contact-section {
+            /* 浅灰蓝渐变背景，作为兜底 */
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #333333;
+            padding: 60px 0;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        /* 预约模块容器 - Flex布局实现左右排列 */
+        .contact-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center; /* 垂直居中对齐 */
+            justify-content: space-between; /* 左右两端分布，中间留间距 */
+            gap: 40px; /* 表单和图片之间的间距 */
+        }
+        /* 表单区域容器 */
+        .form-wrapper {
+            flex: 1; /* 占剩余宽度，自适应 */
+            min-width: 300px; /* 最小宽度，避免挤变形 */
+        }
+        /* 客服图片区域容器 */
+        .avatar-wrapper {
+            flex: 0 0 300px; /* 固定宽度300px，不拉伸不压缩 */
+            text-align: center;
+        }
+        /* 客服图片样式 */
+        .service-avatar {
+            width: 100%;
+            max-width: 280px; /* 图片最大宽度 */
+            height: auto; /* 自动适应高度，不扭曲 */
+            border-radius: 12px; /* 圆角，和表单风格统一 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 轻微阴影，提升层次感 */
+            object-fit: cover; /* 保持图片比例，裁剪多余部分 */
+            /* 以下是补充的新样式 */
+            filter: brightness(0.98); /* 轻微调暗图片，提升高级质感（可选，可调整数值0.1-1） */
+            transition: transform 0.3s ease; /* 过渡动画，让hover效果更顺滑 */
+        }
+
+        /* 补充：图片hover交互效果（鼠标移上去轻微放大） */
+        .service-avatar:hover {
+            transform: scale(1.02); /* 放大1.02倍，效果柔和不夸张 */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* 阴影轻微加重，强化层次感 */
+        }
+        /* 表单标题美化 */
+        .contact-title {
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #165DFF; /* 呼应品牌深蓝色，提升辨识度 */
+            text-align: center;
+        }
+        /* 表单整体样式 */
+        .reservation-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        /* 输入框样式美化 */
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        /* 输入框聚焦效果 */
+        .form-input:focus {
+            outline: none;
+            border-color: #165DFF;
+            box-shadow: 0 0 0 3px rgba(22, 93, 255, 0.1);
+        }
+        /* 占位符文字样式 */
+        .form-input::placeholder {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        /* 提交按钮美化 */
+        .submit-btn {
+            background: #165DFF;
+            color: #ffffff;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block; /* 按钮居中 */
+        }
+        /* 按钮hover效果 */
+        .submit-btn:hover {
+            background: #0e4bdb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(22, 93, 255, 0.2);
+        }
+        /* 按钮禁用状态（提交中） */
+        .submit-btn:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        /* 客服热线文字样式 */
+        .contact-hotline {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #64748b;
+            text-align: center;
+        }
+        .contact-hotline strong {
+            color: #165DFF;
+            font-weight: 700;
+        }
+        /* 响应式适配：手机端自动换行，图片在上，表单在下 */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column; /* 改为垂直排列 */
+                gap: 30px; /* 增大垂直间距，更美观 */
+            }
+            .avatar-wrapper {
+                flex: none; /* 取消固定宽度 */
+                width: 80%; /* 手机端图片宽度自适应 */
+            }
+        }
+
+        /* ========== 新增：表单提示样式 ========== */
+        .form-tip {
+            margin: 15px auto 0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+            font-size: 14px;
+            display: none; /* 默认隐藏 */
+        }
+        /* 成功提示样式 */
+        .tip-success {
+            background: rgba(45, 153, 97, 0.1);
+            color: #2D9961;
+            border: 1px solid rgba(45, 153, 97, 0.2);
+        }
+        /* 失败提示样式 */
+        .tip-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        /* 提交中提示样式 */
+        .tip-loading {
+            background: rgba(22, 93, 255, 0.1);
+            color: #165DFF;
+            border: 1px solid rgba(22, 93, 255, 0.2);
+        }
+    </style>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- 左侧：预约表单 -->
+            <div class="form-wrapper">
+                <h2 class="contact-title"><i class="fa-solid fa-headset fa-fw"></i> 立即预约 · 免费报价</h2>
+                <form id="reservationForm" class="reservation-form" action="https://formspree.io/f/mbdjeorj" method="POST">
+                    <div>
+                        <input type="text" class="form-input" name="name" placeholder="您的姓名" required>
+                    </div>
+                    <div>
+                        <input type="tel" class="form-input" name="phone" placeholder="联系电话（必填）" required>
+                    </div>
+                    <div>
+                        <input type="text" class="form-input" name="house" placeholder="户型/面积（如：三居室/120㎡）" required>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">提交预约 · 免费获取方案</button>
+                    <!-- 新增：表单提示容器 -->
+                    <div class="form-tip" id="formTip"></div>
+                </form>
+                <p class="contact-hotline">客服热线：<strong>19866097606</strong></p>
+            </div>
+
+            <!-- 右侧：客服图片 -->
+            <div class="avatar-wrapper">
+                <img src="/assets/img/jiedaiyuan_s.jpg" alt="众心精工客服专员" class="service-avatar">
+                <p style="margin-top: 15px; color: #64748b; font-size: 14px;">一对一专属客服，为您解答疑惑</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 新增：表单提交逻辑 JavaScript ========== -->
+    <script>
+        // 获取表单、按钮、提示容器元素
+        const reservationForm = document.getElementById('reservationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formTip = document.getElementById('formTip');
+
+        // 表单提交事件监听（阻止默认刷新行为）
+        reservationForm.addEventListener('submit', async (e) => {
+            // 1. 阻止表单默认提交行为（避免页面刷新）
+            e.preventDefault();
+
+            // 2. 重置提示样式，显示"提交中"状态
+            resetFormTip();
+            formTip.className = 'form-tip tip-loading';
+            formTip.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在提交预约信息，请稍候...';
+            formTip.style.display = 'block';
+            submitBtn.disabled = true; // 禁用按钮，防止重复提交
+            submitBtn.innerHTML = '提交中...';
+
+            try {
+                // 3. 构建表单数据（获取用户输入的内容）
+                const formData = new FormData(reservationForm);
+
+                // 4. 异步提交表单（使用Fetch API发送请求）
+                const response = await fetch(reservationForm.action, {
+                    method: reservationForm.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                // 5. 判断提交结果，显示对应提示
+                if (response.ok) {
+                    // 提交成功
+                    formTip.className = 'form-tip tip-success';
+                    formTip.innerHTML = '<i class="fa-solid fa-check-circle"></i> 预约提交成功！我们将在1-2个工作日内与您联系，请注意查收来电。';
+                    
+                    // 可选：提交成功后重置表单内容
+                    reservationForm.reset();
+                } else {
+                    // 提交失败（服务器返回错误）
+                    throw new Error('服务器返回异常，请稍后重试');
+                }
+            } catch (error) {
+                // 6. 捕获网络错误或其他异常，显示失败提示
+                formTip.className = 'form-tip tip-error';
+                formTip.innerHTML = `<i class="fa-solid fa-exclamation-circle"></i> 预约提交失败！${error.message}。`;
+            } finally {
+                // 7. 无论成功/失败，最终启用按钮（恢复初始状态）
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '提交预约 · 免费获取方案';
+
+                // 可选：3秒后自动隐藏失败提示（成功提示保留，让用户查看）
+                if (formTip.classList.contains('tip-error') || formTip.classList.contains('tip-loading')) {
+                    setTimeout(() => {
+                        formTip.style.display = 'none';
+                    }, 3000);
+                }
+            }
+        });
