@@ -92,36 +92,36 @@
   </div>
 </section>
 <!-- 3. 视频展示模块 -->
-    <section class="section videos-section">
-        <div class="container text-center">
-            <h2 class="mb-5"><i class="fa-solid fa-video"></i> 施工&效果视频</h2>
-            <div class="ratio ratio-16x9 mx-auto" style="max-width: 800px;"> <!-- 限制视频最大宽度，更美观 -->
-                <video controls poster="/assets/img/video-cover.jpg" class="rounded shadow"> <!-- 补充圆角和阴影 -->
-                    <source src="/assets/video/construction.mp4" type="video/mp4">
-                    你的浏览器不支持视频播放
-                </video>
-            </div>
-            <p class="mt-3">点击播放：众心精工施工工艺全流程</p>
-            <a href="/videos/" class="btn mt-2">查看更多视频</a>
+<section class="section videos-section">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="margin-bottom: 2rem;"><i class="fa-solid fa-video"></i> 施工&效果视频</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; max-width: 800px; margin: 0 auto;">
+            <video controls poster="/assets/video/video-cover.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <source src="/assets/video/construction.mp4" type="video/mp4">
+                你的浏览器不支持视频播放
+            </video>
         </div>
-    </section>
+        <p style="margin-top: 1rem;">点击播放：众心精工施工工艺全流程</p>
+        <a href="/videos/" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; background-color: #d97706; color: white; text-decoration: none; border-radius: 4px;">查看更多视频</a>
+    </div>
+</section>
 
     <!-- 4. 新闻动态模块 -->
-    <section class="section news-section">
+    <section class="section news-section" style="padding: 4rem 0; max-width: 1200px; margin: 0 auto;">
         <div class="container">
-            <h2 class="text-center mb-5"><i class="fa-solid fa-newspaper"></i> 装修新闻&行业动态</h2>
-            <div class="row g-4"> <!-- 替换mb-3为g-4，间距更均匀 -->
+            <h2 class="text-center mb-5"><i class="fa fa-file-text-o"></i> 装修新闻&行业动态</h2>
+            <div class="row g-4">
                 <div class="col-md-6">
-                    <h4><i class="fa-solid fa-calendar-day"></i> 2024装修流行趋势</h4>
+                    <h4><i class="fa fa-calendar"></i> 2024装修流行趋势</h4>
                     <p>极简风+原木风仍是主流，环保材料成首选...</p>
                 </div>
                 <div class="col-md-6">
-                    <h4><i class="fa-solid fa-shield-halved"></i> 众心精工质保升级</h4>
+                    <h4><i class="fa fa-shield"></i> 众心精工质保升级</h4>
                     <p>所有工程经过层层把关，隐蔽工程配有全景影像记录，让您无后顾之忧...</p>
                 </div>
             </div>
             <div class="text-center mt-5">
-                <a href="/news/" class="btn">更多新闻</a>
+                <a href="/news/" class="btn" style="background-color: #d97706; color: white; padding: 0.5rem 1.5rem; border-radius: 4px; text-decoration: none;">更多新闻</a>
             </div>
         </div>
     </section>
@@ -299,7 +299,7 @@
         <div class="contact-container">
             <!-- 左侧：预约表单 -->
             <div class="form-wrapper">
-                <h2 class="contact-title"><i class="fa-solid fa-headset fa-fw"></i> 立即预约 · 免费报价</h2>
+                <h2 class="contact-title"><i class="fa fa-headphones fa-fw"></i> 立即预约 · 免费报价</h2>
                 <form id="reservationForm" class="reservation-form" action="https://formspree.io/f/mbdjeorj" method="POST">
                     <div>
                         <input type="text" class="form-input" name="name" placeholder="您的姓名" required>
@@ -325,65 +325,63 @@
         </div>
     </section>
 
-    <!-- ========== 新增：表单提交逻辑 JavaScript ========== -->
+    <!-- ========== 修复：表单提交逻辑 JavaScript ========== -->
     <script>
         // 获取表单、按钮、提示容器元素
         const reservationForm = document.getElementById('reservationForm');
         const submitBtn = document.getElementById('submitBtn');
         const formTip = document.getElementById('formTip');
-
+        
+        // 添加缺失的resetFormTip函数
+        function resetFormTip() {
+            formTip.className = 'form-tip';
+            formTip.innerHTML = '';
+            formTip.style.display = 'none';
+        }
+    
         // 表单提交事件监听（阻止默认刷新行为）
-        reservationForm.addEventListener('submit', async (e) => {
+        reservationForm.addEventListener('submit', function(e) {
             // 1. 阻止表单默认提交行为（避免页面刷新）
             e.preventDefault();
-
+    
             // 2. 重置提示样式，显示"提交中"状态
             resetFormTip();
             formTip.className = 'form-tip tip-loading';
-            formTip.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在提交预约信息，请稍候...';
+            formTip.innerHTML = '<i class="fa fa-spinner fa-spin"></i> 正在提交预约信息，请稍候...';
             formTip.style.display = 'block';
             submitBtn.disabled = true; // 禁用按钮，防止重复提交
             submitBtn.innerHTML = '提交中...';
-
-            try {
-                // 3. 构建表单数据（获取用户输入的内容）
-                const formData = new FormData(reservationForm);
-
-                // 4. 异步提交表单（使用Fetch API发送请求）
-                const response = await fetch(reservationForm.action, {
-                    method: reservationForm.method,
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                // 5. 判断提交结果，显示对应提示
-                if (response.ok) {
+    
+            // 3. 使用jQuery的AJAX方法提交表单
+            $.ajax({
+                url: reservationForm.action,
+                method: reservationForm.method,
+                data: $(reservationForm).serialize(),
+                dataType: 'json',
+                success: function(response) {
                     // 提交成功
                     formTip.className = 'form-tip tip-success';
-                    formTip.innerHTML = '<i class="fa-solid fa-check-circle"></i> 预约提交成功！我们将在1-2个工作日内与您联系，请注意查收来电。';
+                    formTip.innerHTML = '<i class="fa fa-check-circle"></i> 预约提交成功！我们将在1-2个工作日内与您联系，请注意查收来电。';
                     
-                    // 可选：提交成功后重置表单内容
+                    // 重置表单内容
                     reservationForm.reset();
-                } else {
-                    // 提交失败（服务器返回错误）
-                    throw new Error('服务器返回异常，请稍后重试');
+                },
+                error: function(xhr, status, error) {
+                    // 提交失败
+                    formTip.className = 'form-tip tip-error';
+                    formTip.innerHTML = '<i class="fa fa-exclamation-circle"></i> 预约提交失败！服务器返回异常，请稍后重试。';
+                },
+                complete: function() {
+                    // 无论成功/失败，最终启用按钮（恢复初始状态）
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '提交预约 · 免费获取方案';
+    
+                    // 3秒后自动隐藏失败提示（成功提示保留，让用户查看）
+                    if (formTip.classList.contains('tip-error') || formTip.classList.contains('tip-loading')) {
+                        setTimeout(function() {
+                            formTip.style.display = 'none';
+                        }, 3000);
+                    }
                 }
-            } catch (error) {
-                // 6. 捕获网络错误或其他异常，显示失败提示
-                formTip.className = 'form-tip tip-error';
-                formTip.innerHTML = `<i class="fa-solid fa-exclamation-circle"></i> 预约提交失败！${error.message}。`;
-            } finally {
-                // 7. 无论成功/失败，最终启用按钮（恢复初始状态）
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '提交预约 · 免费获取方案';
-
-                // 可选：3秒后自动隐藏失败提示（成功提示保留，让用户查看）
-                if (formTip.classList.contains('tip-error') || formTip.classList.contains('tip-loading')) {
-                    setTimeout(() => {
-                        formTip.style.display = 'none';
-                    }, 3000);
-                }
-            }
+            });
         });
