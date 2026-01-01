@@ -40,7 +40,7 @@
   <div style="max-width: 1200px; margin: 0 auto;">
     <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">精选装修案例</h2>
     <div class="case-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-      {% for case in site.cases limit:6 %}
+      {% for case in site.data.cases limit:6 %}
       <a href="{{ case.url }}" style="text-decoration: none; color: #333;">
         <div class="case-card" style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
           <img src="{{ case.image }}" alt="{{ case.title }}" style="width: 100%; height: 200px; object-fit: cover;">
