@@ -5,10 +5,7 @@ style: 北欧风
 area: 89㎡
 price: 10.5万
 gallery:
-  - /images/cases/nordic1-1.jpg
-  - /images/cases/nordic1-2.jpg
-  - /images/cases/nordic1-3.jpg
-  - /images/cases/nordic1-4.jpg
+- /images/cases/gongwei.jpg
 design_concept: >
   针对89㎡的小户型，设计重点放在空间利用率和通透感上。整体以白色为基底，搭配原木色家具和浅绿软装，
   打造清新治愈的北欧风。客厅舍弃传统茶几，改用可移动边几，释放更多活动空间；

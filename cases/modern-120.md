@@ -5,10 +5,8 @@ style: 现代简约
 area: 120㎡
 price: 15.8万
 gallery:
-  - /images/cases/modern1-1.jpg
-  - /images/cases/modern1-2.jpg
-  - /images/cases/modern1-3.jpg
-  - /images/cases/modern1-4.jpg
+  - /images/cases/ciwo.jpg 
+  - /images/cases/louti.png  
 design_concept: >
   本案以“简约不简单”为核心设计理念，摒弃繁杂装饰，用简洁的线条和柔和的色调勾勒空间轮廓。
   客餐厅采用一体化设计，扩大视觉通透感；主卧搭配原木色家具，营造温馨静谧的休憩氛围；
