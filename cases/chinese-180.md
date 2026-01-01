@@ -5,10 +5,13 @@ style: 新中式
 area: 180㎡
 price: 42.6万
 gallery:
-  - /images/cases/chinese1-1.jpg
-  - /images/cases/chinese1-2.jpg
-  - /images/cases/chinese1-3.jpg
-  - /images/cases/chinese1-4.jpg
+  - /images/cases/keting.jpg
+  - /images/cases/binheshidai.jpg
+  - /images/cases/chufang.jpg
+  - /images/cases/bhzhuwo.jpg
+  - /images/cases/ciwo.jpg 
+  - /images/cases/gongwei.jpg
+  - /images/cases/louti.jpg
 design_concept: >
   本案将传统中式元素与现代设计手法融合，打造兼具古韵与时尚的居住空间。入户玄关设置端景台，
   搭配山水挂画，彰显东方雅致；客厅采用对称式布局，实木沙发搭配中式吊灯，沉稳大气；
