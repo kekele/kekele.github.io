@@ -1,0 +1,22 @@
+---
+layout: case
+title: 120㎡现代简约三居室 温馨实用之家
+style: 现代简约
+area: 120㎡
+price: 15.8万
+gallery:
+  - /images/cases/modern1-1.jpg
+  - /images/cases/modern1-2.jpg
+  - /images/cases/modern1-3.jpg
+  - /images/cases/modern1-4.jpg
+design_concept: >
+  本案以“简约不简单”为核心设计理念，摒弃繁杂装饰，用简洁的线条和柔和的色调勾勒空间轮廓。
+  客餐厅采用一体化设计，扩大视觉通透感；主卧搭配原木色家具，营造温馨静谧的休憩氛围；
+  儿童房则以浅蓝为主色调，兼顾实用性与趣味性，满足孩子成长需求。
+materials:
+  - 客餐厅地面：800×800mm 浅灰色通体砖
+  - 墙面：环保乳胶漆（多乐士金装五合一）
+  - 卧室地板：实木复合地板（大自然）
+  - 厨卫吊顶：铝扣板集成吊顶
+  - 卫浴洁具：箭牌卫浴套装
+---

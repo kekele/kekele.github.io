@@ -1,89 +1,38 @@
-title:            Site Title
-description:      Describe your website here.
-disqus_shortname: 
-reading_time:     true
-words_per_minute: 200
-# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
-# When testing locally leave blank or use http://localhost:4000
-url:
+# 站点基础信息
+title: 众心精工 - 一站式家装设计与施工服务
+tagline: 匠心筑家 品质随行 不忘初心 方得始终
+description: 众心精工装修公司专注家庭装修、别墅整装、旧房改造，提供全案设计+施工一体化服务，10年行业经验，零增项承诺！
+url: "https://kekele.github.io" # 替换为你的域名
+baseurl: ""
+permalink: /:title/
 
-# Owner/author information
-owner:
-  name:           Your Name
-  avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
-  email:          you@email.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:
+# 主题配置
+hpstr_theme:
+  highlight_color: "#d97706" # 主色调：暖橙色（契合家装温馨感）
+  header_text_color: "#ffffff"
+  header_background: "#1f2937" # 头部背景深灰
 
-# Background image to be tiled on all pages
-background: 
+# 导航菜单
+navigation:
+  - title: 首页
+    url: /index.html
+  - title: 装修案例
+    url: /cases/index.html
+  - title: 服务流程
+    url: /services/index.html
+  - title: 关于我们
+    url: /about/index.html
+  - title: 免费预约
+    url: /contact/index.html  
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+# 联系方式（全局调用）
+contact:
+  phone: 19866097606
+  address: 深圳市宝安区西乡街道南昌社区富士君荟苑1栋1-218
+  wechat: zhongxinjinggong
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      false  # publish future dated posts --  true, false (default) 
-highlighter: rouge
-markdown:    kramdown
+# 插件（需确保已安装）
 plugins:
-  - jekyll-sitemap
   - jekyll-paginate
-  - jekyll-gist
+  - jekyll-sitemap
   - jekyll-feed
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
-
-# Amount of post to show on home page
-paginate: 5
-
-kramdown:
-  input: GFM
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
-
-include: 
-  - .htaccess
-exclude: 
-  - "*.less"
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - CHANGELOG
-  - Capfile
-  - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - config
-  - gulpfile.js
-  - lib
-  - log
-  - node_modules
-  - package.json
-  - spec
-  - tmp

@@ -1,42 +1,91 @@
----
-layout: post-index
 title: Latest Posts
-description: "Describe this nonsense."
-tags: [Jekyll, theme, themes, responsive, blog, modern]
-comments: false
-image:
-  feature: abstract-1.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
----
+<!-- Hero 头部大图区域 -->
+<div class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-banner.jpg') center/cover no-repeat; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;">
+  <div class="hero-content">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">众心精工 让家更有温度</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">全案设计 · 环保材料 · 透明报价 · 终身售后</p>
+    <a href="/contact/" class="btn" style="background: #d97706; color: #fff; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none;">立即预约量房</a>
+  </div>
+</div>
 
-{% for post in paginator.posts %}
-<article class="hentry">
-  <header>
-    {% if post.image.feature %}
-      <div class="entry-image-index">
-        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
-      </div><!-- /.entry-image -->
-    {% endif %}
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
-      {% if site.reading_time %}
-      <span class="entry-reading-time">
-        <i class="fa fa-clock-o"></i>
-        {% include read-time-index.html %}
-      </span><!-- /.entry-reading-time -->
-      {% endif %}
-    </div><!-- /.entry-meta -->
-    {% if post.link %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
-    {% else %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
-    {% endif %}
-  </header>
-  <div class="entry-content">
-    {{ post.content }}
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-{% endfor %}
+<!-- 核心服务板块 -->
+<section class="services" style="padding: 4rem 0; max-width: 1200px; margin: 0 auto;">
+  <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">我们的核心服务</h2>
+  <div class="service-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+    <!-- 服务卡片1 -->
+    <div class="card" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px; text-align: center;">
+      <img src="/images/icon-design.png" alt="全案设计" style="width: 80px; margin-bottom: 1rem;">
+      <h3>全案家装设计</h3>
+      <p>一对一设计师服务，量身定制现代、北欧、中式等多种风格方案</p>
+    </div>
+    <!-- 服务卡片2 -->
+    <div class="card" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px; text-align: center;">
+      <img src="/images/icon-construction.png" alt="标准施工" style="width: 80px; margin-bottom: 1rem;">
+      <h3>标准化施工</h3>
+      <p>持证施工团队，全程监理巡检，严格按照国家装修规范施工</p>
+    </div>
+    <!-- 服务卡片3 -->
+    <div class="card" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px; text-align: center;">
+      <img src="/images/icon-renovation.png" alt="旧房改造" style="width: 80px; margin-bottom: 1rem;">
+      <h3>旧房翻新改造</h3>
+      <p>老房局部/全屋改造，快速焕新，不影响正常居住</p>
+    </div>
+  </div>
+</section>
 
-{% include pagination.html %}
+<!-- 装修案例展示 -->
+<section class="cases" style="padding: 4rem 0; background: #f9fafb;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">精选装修案例</h2>
+    <div class="case-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      {% for case in site.cases limit:6 %}
+      <a href="{{ case.url }}" style="text-decoration: none; color: #333;">
+        <div class="case-card" style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <img src="{{ case.image }}" alt="{{ case.title }}" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 1rem;">
+            <h3 style="margin-bottom: 0.5rem;">{{ case.title }}</h3>
+            <p style="color: #666;">{{ case.style }} | {{ case.area }}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/cases/" class="more-btn" style="color: #d97706; text-decoration: none;">查看更多案例 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 客户评价 -->
+<section class="reviews" style="padding: 4rem 0; max-width: 1200px; margin: 0 auto;">
+  <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2rem;">客户真实评价</h2>
+  <div class="review-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    <div class="review-item" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px;">
+      <p style="font-style: italic; margin-bottom: 1rem;">"团队很专业，完全get到我的需求，施工过程也很透明，没有乱加价，装完的效果比预期还好！"</p>
+      <p style="text-align: right; font-weight: bold;">—— 刘姐 · 现代简约风</p>
+    </div>
+    <div class="review-item" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px;">
+      <p style="font-style: italic; margin-bottom: 1rem;">"旧房改造选了众心精工，工期比预期提前3天，材料都是环保的，装完马上就能入住，太省心了！"</p>
+      <p style="text-align: right; font-weight: bold;">—— 李先生 · 旧房翻新</p>
+    </div>
+    <div class="review-item" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px;">
+      <p style="font-style: italic; margin-bottom: 1rem;">"从设计到施工全程不用我操心，设计师会定期沟通进度，施工团队也很负责，细节处理得非常到位，最终效果超出我的想象！"</p>
+      <p style="text-align: right; font-weight: bold;">—— 张女士 · 北欧风格</p>
+    </div>
+    <div class="review-item" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px;">
+      <p style="font-style: italic; margin-bottom: 1rem;">"每天要打卡上班，一个白领上班族，没有时间去处理装修问题，选了众心精工没有让我失望。从开始到结束完全不用我操心，各种细节把控行云流水，最终效果超出我的期望！"</p>
+      <p style="text-align: right; font-weight: bold;">—— 王先生 · 中式装修</p>
+    </div>
+      <p style="font-style: italic; margin-bottom: 1rem;">"作为一个对装修一窍不通的人，选择众心精工是最明智的决定。他们会耐心解释每一个环节，价格透明，没有任何隐性消费，装完的家让我非常满意！"</p>
+      <p style="text-align: right; font-weight: bold;">—— 王先生 · 中式装修</p>
+    </div>
+    <div class="review-item" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px;">
+      <p style="font-style: italic; margin-bottom: 1rem;">"婚房装修时间紧任务重，众心精工不仅按时完工，还帮我解决了很多突发问题。装修质量一流，环保检测完全达标，现在每天住在里面都觉得很幸福！"</p>
+      <p style="text-align: right; font-weight: bold;">—— 陈小姐 · 婚房装修</p>
+    </div>
+    <div class="review-item" style="padding: 2rem; border: 1px solid #eee; border-radius: 8px;">
+      <p style="font-style: italic; margin-bottom: 1rem;">"大平层装修涉及很多细节，众心精工的团队展现了极高的专业素养，从空间规划到材料选择都给出了很好的建议，施工过程井然有序，最终效果非常完美！"</p>
+      <p style="text-align: right; font-weight: bold;">—— 柯先生 · 大平层设计</p>
+    </div>
+  </div>
+</section>

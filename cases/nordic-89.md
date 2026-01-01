@@ -1,0 +1,22 @@
+---
+layout: case
+title: 89㎡北欧风小户型 清新治愈小窝
+style: 北欧风
+area: 89㎡
+price: 10.5万
+gallery:
+  - /images/cases/nordic1-1.jpg
+  - /images/cases/nordic1-2.jpg
+  - /images/cases/nordic1-3.jpg
+  - /images/cases/nordic1-4.jpg
+design_concept: >
+  针对89㎡的小户型，设计重点放在空间利用率和通透感上。整体以白色为基底，搭配原木色家具和浅绿软装，
+  打造清新治愈的北欧风。客厅舍弃传统茶几，改用可移动边几，释放更多活动空间；
+  阳台改造成休闲阅读角，满足业主的独处需求；厨房采用L型布局，动线合理，操作便捷。
+materials:
+  - 全屋地面：600×600mm 哑光仿古砖
+  - 墙面：硅藻泥（客厅局部）+ 乳胶漆
+  - 定制柜体：生态板全屋定制（索菲亚）
+  - 门窗：断桥铝平开窗
+  - 厨房电器：老板烟灶套装
+---

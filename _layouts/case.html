@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<section class="case-detail" style="padding: 4rem 0; max-width: 1200px; margin: 0 auto;">
+  <h1 style="text-align: center; margin-bottom: 1rem;">{{ page.title }}</h1>
+  <p style="text-align: center; color: #666; margin-bottom: 3rem;">{{ page.style }} | {{ page.area }} | 造价：{{ page.price }}</p>
+
+  <!-- 案例大图轮播 -->
+  <div class="case-gallery" style="margin-bottom: 3rem;">
+    {% for img in page.gallery %}
+    <img src="{{ img }}" alt="{{ page.title }}-{{ forloop.index }}" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem; border-radius: 8px;">
+    {% endfor %}
+  </div>
+
+  <!-- 案例详情 -->
+  <div class="case-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+    <div>
+      <h3>设计理念</h3>
+      <p>{{ page.design_concept }}</p>
+    </div>
+    <div>
+      <h3>材料清单</h3>
+      <ul style="list-style: none; padding: 0;">
+        {% for material in page.materials %}
+        <li style="margin-bottom: 0.5rem;">• {{ material }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!-- 相关案例推荐 -->
+  <div class="related-cases" style="margin-top: 4rem;">
+    <h3>相关案例推荐</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+      {% for case in site.data.cases limit:3 %}
+      <a href="{{ case.url }}" style="text-decoration: none;">
+        <img src="{{ case.image }}" alt="{{ case.title }}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;">
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

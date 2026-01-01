@@ -1,0 +1,50 @@
+---
+layout: default
+title: 装修案例 | 众心精工
+---
+
+<section class="case-page" style="padding: 4rem 0; max-width: 1200px; margin: 0 auto;">
+  <h1 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">装修案例展示</h1>
+  <div class="case-filter" style="text-align: center; margin-bottom: 2rem;">
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn" data-filter="现代简约">现代简约</button>
+    <button class="filter-btn" data-filter="北欧风">北欧风</button>
+    <button class="filter-btn" data-filter="新中式">新中式</button>
+  </div>
+  <div class="case-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+    {% for case in site.data.cases %}
+    <div class="case-card" data-category="{{ case.style }}" style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <a href="{{ case.url }}" style="text-decoration: none; color: #333;">
+        <img src="{{ case.image }}" alt="{{ case.title }}" style="width: 100%; height: 220px; object-fit: cover;">
+        <div style="padding: 1rem;">
+          <h3>{{ case.title }}</h3>
+          <p style="color: #666;">{{ case.style }} | {{ case.area }}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- 筛选功能JS -->
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const caseCards = document.querySelectorAll('.case-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      // 切换按钮激活状态
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // 筛选案例
+      caseCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
